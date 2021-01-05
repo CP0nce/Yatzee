@@ -7,14 +7,14 @@ class Yatzy:
     #modificado para que sume todo lo que está dentro de chance
 
     @staticmethod
-    def yatzy(dice):
-        counts = [0]*(len(dice)+1)
-        for die in dice:
-            counts[die-1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
+    def yatzy(d1, d2, d3, d4, d5):
+        total = len(set(yatzy)) == 1   
+    
+        if total :
+            return 50
+        else:        
+            return 0
+    #modificado para que si todos los valores son iguales, devuelva 50 puntos, si no, devuelve 0
     
     @staticmethod
     def ones( d1,  d2,  d3,  d4,  d5):
@@ -67,17 +67,14 @@ class Yatzy:
 
     @staticmethod
     def score_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
-        return 0
+        sort = score_pair.sort(revese=True)
+        total = 0
+        if sort[0] == sort[1]:
+            total= sort[0] + sort[1]
+            return total
+        else:
+            return total
+    #modificado para que ordene de mayor a menor la lista de dados, compare los dos primeros numeros y, si son iguales, los sume
     
     @staticmethod
     def two_pair( d1,  d2,  d3,  d4,  d5):
